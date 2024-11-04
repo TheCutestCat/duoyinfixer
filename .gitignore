@@ -1,3 +1,7 @@
 chinese-dictionary/
 .vscode
 process.ipynb
+build
+dist
+duoyinfixer.egg-info
+__pycache__

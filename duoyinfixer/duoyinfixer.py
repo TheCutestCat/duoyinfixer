@@ -1,8 +1,8 @@
 def _load():
     import json
-    with open('./homophones_set.json', 'r', encoding='utf-8') as file:
+    with open('duoyinfixer/rescources/homophones_set.json', 'r', encoding='utf-8') as file:
         homophones_set = json.load(file)
-    with open('./monosyllabi_character_one_sound_2_one_character.json', 'r', encoding='utf-8') as file:
+    with open('duoyinfixer/rescources/monosyllabi_character_one_sound_2_one_character.json', 'r', encoding='utf-8') as file:
         monosyllabi_character = json.load(file)
     return homophones_set, monosyllabi_character
 
@@ -16,7 +16,7 @@ def use_pypinyin(input_zh_char):
 
 import re
 
-def DuoYinFixer(input : str):
+def fixer(input : str):
     homophones_set, monosyllabi_character = _load()
     # 使用正则表达式将输入字符串按标点拆分为列表
     input_list = re.split(r'([,，。！？；：\.\?!;:])', input)
@@ -50,5 +50,5 @@ def DuoYinFixer(input : str):
 
 if __name__ == "__main__":
     input = "我好想睡觉啊，睡醒之后就去玩游戏！"
-    OUT = DuoYinFixer(input)
+    OUT = fixer(input)
     print(OUT)
